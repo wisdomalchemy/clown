@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemTable extends Migration {
+class CreateBackstockTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,11 @@ class CreateItemTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('item', function($table)
+			Schema::create('backstock', function($table)
 		{
-    		$table->integer('id')->primary();
-    		$table->string('slot_location', 8);
-    		$table->string('name', 80);
+    		$table->string('id', 10)->primary();
     		$table->timestamps();
-		});
+	});
 	}
 
 	/**
@@ -28,7 +26,7 @@ class CreateItemTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('item');
+			Schema::dropIfExists('backstock');
 	}
 
 }

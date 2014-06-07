@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemTable extends Migration {
+class CreateUserTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,7 @@ class CreateItemTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('item', function($table)
-		{
-    		$table->integer('id')->primary();
-    		$table->string('slot_location', 8);
-    		$table->string('name', 80);
-    		$table->timestamps();
-		});
+		//
 	}
 
 	/**
@@ -28,7 +22,7 @@ class CreateItemTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('item');
+		//
 	}
 
 }
