@@ -12,7 +12,12 @@ class CreateUserLevelTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+		Schema::create('user_level', function($table)
+		{
+    		$table->increments('id');
+    		$table->string('name', 20);
+    		$table->timestamps();
+		});
 	}
 
 	/**
@@ -22,7 +27,7 @@ class CreateUserLevelTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+			Schema::dropIfExists('user_level');
 	}
 
 }

@@ -11,24 +11,25 @@ class CreateItemTable extends Migration {
 	 * @return void
 	 */
 	public function up()
-	{
-		Schema::create('item', function($table)
-		{
-    		$table->integer('id')->primary();
-    		$table->string('slot_location', 8);
-    		$table->string('name', 80);
-    		$table->timestamps();
-		});
-	}
+{
+Schema::create('item', function($table)
+{
+    $table->string('id', 10)->primary();
+    $table->string('name',80);
+    $table->string('slot_location',8);
+    $table->string('pack', 20);
+    $table->timestamps();
+});
+}
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::dropIfExists('item');
-	}
+/**
+* Reverse the migrations.
+*
+* @return void
+*/
+public function down()
+{
+Schema::dropIfExists('item');
+}
 
 }
